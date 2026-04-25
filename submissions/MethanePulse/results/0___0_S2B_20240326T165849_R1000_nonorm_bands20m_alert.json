@@ -1,0 +1,44 @@
+{
+  "alert_id": "69c08b00-4926-4e8f-803e-b3d696a85254",
+  "schema_version": "1.0",
+  "timestamp_utc": "2026-04-25T19:47:52.751441+00:00",
+  "source": {
+    "tile_path": "sample_input/0___0_S2B_20240326T165849_R1000_nonorm_bands20m.tiff",
+    "sensor": "Sentinel-2",
+    "bands_used": [
+      "B11 (SWIR_1)",
+      "B12 (SWIR_2)"
+    ],
+    "crs": "EPSG:32614",
+    "bounds": {
+      "left": 739500.0,
+      "bottom": 3340000.0,
+      "right": 749740.0,
+      "top": 3350240.0
+    }
+  },
+  "detection": {
+    "plume_detected": true,
+    "confidence_threshold": 0.5,
+    "plume_pixel_count": 1244,
+    "plume_coverage_pct": 0.4745,
+    "mean_plume_prob": 0.9152,
+    "centroid_geographic": [
+      743560.0,
+      3344740.0
+    ]
+  },
+  "severity": {
+    "class_id": 2,
+    "label": "HIGH",
+    "confidence": 0.3572,
+    "color_hex": "#e03131"
+  },
+  "model": {
+    "name": "TerraMindMethanePulse",
+    "encoder": "TerraMind-1.0-small (frozen)",
+    "trainable_params": 616388,
+    "best_val_iou": 0.3298
+  },
+  "status": "ALERT"
+}

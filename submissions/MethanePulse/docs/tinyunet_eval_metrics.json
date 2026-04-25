@@ -1,0 +1,12 @@
+{
+  "model": "TinyUNet",
+  "checkpoint": "outputs/checkpoints/tiny_unet_epoch15.pt",
+  "val_tiles": 185,
+  "precision": 0.7565,
+  "recall": 0.5813,
+  "f1_score": 0.6575,
+  "iou": 0.4897,
+  "fp_rate": 0.001,
+  "accuracy": 0.9969,
+  "vs_physics_baseline_f1": 3.16
+}

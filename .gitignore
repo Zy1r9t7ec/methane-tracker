@@ -1,0 +1,44 @@
+# Data files (large raw and processed data)
+data/raw/
+data/processed/
+
+# Output files and checkpoints
+outputs/
+outputs/checkpoints/
+outputs/alerts/
+outputs/figures/
+outputs/*.json
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local environment files
+.env
+.env.local
+
+# Package files
+dist/
+build/
+*.egg-info/
+
+# Note: submissions/ folder is intentionally NOT ignored
+# All submission files should be tracked in git

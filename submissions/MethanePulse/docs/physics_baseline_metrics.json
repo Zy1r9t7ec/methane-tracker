@@ -1,0 +1,49 @@
+{
+  "method": "improved_z_score_anomaly",
+  "best_z_threshold": 1.0,
+  "best_F1": 0.208,
+  "all_results": [
+    {
+      "z_threshold": 0.5,
+      "IoU": 0.0542,
+      "F1": 0.101,
+      "Recall": 0.4323,
+      "FP_rate": 0.0347
+    },
+    {
+      "z_threshold": 1.0,
+      "IoU": 0.121,
+      "F1": 0.208,
+      "Recall": 0.2203,
+      "FP_rate": 0.0044
+    },
+    {
+      "z_threshold": 1.5,
+      "IoU": 0.054,
+      "F1": 0.0993,
+      "Recall": 0.0641,
+      "FP_rate": 0.0008
+    },
+    {
+      "z_threshold": 2.0,
+      "IoU": 0.0144,
+      "F1": 0.0275,
+      "Recall": 0.0153,
+      "FP_rate": 0.0002
+    },
+    {
+      "z_threshold": 2.5,
+      "IoU": 0.0048,
+      "F1": 0.0094,
+      "Recall": 0.0049,
+      "FP_rate": 0.0
+    },
+    {
+      "z_threshold": 3.0,
+      "IoU": 0.0012,
+      "F1": 0.0024,
+      "Recall": 0.0012,
+      "FP_rate": 0.0
+    }
+  ]
+}
