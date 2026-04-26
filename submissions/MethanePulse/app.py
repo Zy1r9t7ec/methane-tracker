@@ -481,9 +481,9 @@ with tab_model:
 
         # Pre-format numeric columns as strings to avoid jinja2 / Styler dependency
         df_display = pd.DataFrame({
-            "Model"      : ["Physics (MBMP)", "TinyUNet (scratch)", "MethanePulse (ours)"],
-            "Val IoU"    : ["0.1210", "0.4897", "0.3257 ★"],
-            "Val F1"     : ["0.2080", "0.6575", "0.5112 ★"],
+            "Model"      : ["Physics (MBMP)", "TinyUNet (scratch)", "MethanePulse (Linear Head)"],
+            "Val IoU"    : ["0.1210", "0.4897", "0.3257"],
+            "Val F1"     : ["0.2080", "0.6575", "0.5112"],
             "Precision"  : ["—",      "0.7565", "—"],
             "Recall"     : ["0.2203", "0.5813", "0.5110"],
             "FP Rate"    : ["0.0044", "0.0010", "—"],
@@ -497,7 +497,7 @@ with tab_model:
 
         # Mini bar chart — IoU comparison
         fig, ax = plt.subplots(figsize=(5.5, 2.4), facecolor="#0d1117")
-        models  = ["Physics\n(MBMP)", "TinyUNet\n(scratch)", "MethanePulse\n(ours)"]
+        models  = ["Physics\n(MBMP)", "TinyUNet\n(scratch)", "MethanePulse\n(Linear Head)"]
         metrics = {
             "Val IoU" : ([0.1210, 0.4897, 0.3257], "#01696f"),
             "Val F1"  : ([0.2080, 0.6575, 0.5112], "#4f98a3"),
