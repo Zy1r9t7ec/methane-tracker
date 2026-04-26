@@ -91,7 +91,8 @@ def run_inference(tiff_path, checkpoint_path, output_dir, confidence_threshold=0
         terramind = BACKBONE_REGISTRY.build(
             'terramind_v1_small',
             pretrained=True,
-            modalities=['S2L2A']
+            modalities=['S2L2A'],
+            bands={'S2L2A': ['SWIR_1', 'SWIR_2']}   # 2-band subset matching checkpoint
         ).to(device).float()
         for p in terramind.parameters():
             p.requires_grad = False
@@ -99,7 +100,7 @@ def run_inference(tiff_path, checkpoint_path, output_dir, confidence_threshold=0
         print("TerraMind encoder loaded")
     except Exception as e:
         print(f"Failed to load TerraMind: {e}")
-        sys.exit(1)
+        raise RuntimeError(f"Failed to load TerraMind encoder: {e}") from e
 
     # ── Build model + load weights ────────────────────────────────
     model = TerraMindMethanePulse(encoder=terramind, embed_dim=384, img_size=512)
@@ -172,7 +173,7 @@ def run_inference(tiff_path, checkpoint_path, output_dir, confidence_threshold=0
     alert_out = out_dir / f"{stem}_alert.json"
     with open(alert_out, "w") as f:
         json.dump(alert, f, indent=2)
-    print(f"✅ Alert saved → {alert_out}")
+    print(f"Alert saved → {alert_out}")
 
     print("\n── Inference Summary ──────────────────────────")
     print(f"  Status       : {alert['status']}")
